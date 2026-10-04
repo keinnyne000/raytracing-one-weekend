@@ -5,8 +5,10 @@
 #include <ostream>
 
 color ray_color(const ray& r) {
-  (void)r;
-  return color(0, 0, 0);
+  vec3 unit_direction = unit_vector(r.direction());
+  auto a = 0.5 * (unit_direction.y() + 1.0);
+  // Apply a lerp lerped = (1-a)startPoint + (a)endPoint
+  return (1.0 - a) * color::one() + a * color(0.5, 0.7, 1.0);
 }
 
 int main() {
