@@ -35,7 +35,7 @@ class vec3 {
     return *this;
   }
 
-  vec3& operator/(double t) { return *this *= 1 / t; }
+  vec3& operator/=(double t) { return *this *= 1 / t; }
 
   // returns the squared L2 norm
   double length_squared() const { return e[0] * e[0] + e[1] * e[1] + e[2] * e[2]; }
