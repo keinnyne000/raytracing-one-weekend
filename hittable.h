@@ -11,9 +11,9 @@ class hit_record {
   bool front_face;
 
   void init_face_normal(const ray& r, const vec3& outwardNormal) {
-    // assumes the normal is a unit vector
+    // assumes the normal is a unit vector; it's a front face if the incoming ray is 'against' the normal
     front_face = dot(r.direction(), outwardNormal) < 0;
-    // if it's a back face, invert it
+    // if it's a back face, invert it so that it faces outward at all times
     normal = front_face ? outwardNormal : -outwardNormal;
   }
 };

@@ -1,7 +1,7 @@
 #ifndef HITTABLE_LIST_H
 #define HITTABLE_LIST_H
 
-#include "hittable.h";
+#include "hittable.h"
 
 #include <memory>
 #include <vector>
@@ -21,7 +21,7 @@ class hittable_list : public hittable {
 
   bool hit(const ray& r, double ray_tmin, double ray_tmax, hit_record& rec) const override {
     hit_record temp_rec;
-    bool hit_anything;
+    bool hit_anything = false;
     auto closest = ray_tmax;
 
     for (const auto& hittable : hittables) {
